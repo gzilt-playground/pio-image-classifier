@@ -1,6 +1,6 @@
 package com.github.gzilt.tensorflow
 
-import org.apache.predictionio.controller.IEngineFactory
+import org.apache.predictionio.controller.EngineFactory
 import org.apache.predictionio.controller.Engine
 
 /** Define Query class which serves as a wrapper for
@@ -32,7 +32,7 @@ case class ActualResult(
 
 
 /** Define Engine */
-object TensorflowEngine extends IEngineFactory {
+object TensorflowEngine extends EngineFactory {
   def apply() = {
     new Engine(
       classOf[DataSource],
