@@ -1,4 +1,4 @@
-package com.github.gzilt.tensorflow
+package com.github.gzilt.classifier.image
 
 import org.apache.predictionio.controller.EngineFactory
 import org.apache.predictionio.controller.Engine

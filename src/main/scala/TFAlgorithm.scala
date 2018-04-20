@@ -1,4 +1,4 @@
-package com.github.gzilt.tensorflow
+package com.github.gzilt.classifier.image
 
 import org.apache.predictionio.controller.P2LAlgorithm
 import org.apache.predictionio.controller.Params
@@ -14,7 +14,7 @@ import java.io.{BufferedInputStream, ByteArrayOutputStream}
 import java.net.URL
 import java.nio.file.{Files, Paths}
 
-import com.github.gzilt.tensorflow.model.InceptionV3
+import com.github.gzilt.classifier.image.model.InceptionV3
 
 import scala.collection.mutable.ListBuffer
 

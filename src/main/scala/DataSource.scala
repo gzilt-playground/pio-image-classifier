@@ -1,4 +1,4 @@
-package com.github.gzilt.tensorflow
+package com.github.gzilt.classifier.image
 
 import org.apache.predictionio.controller.PDataSource
 import org.apache.predictionio.controller.EmptyEvaluationInfo

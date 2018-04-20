@@ -1,4 +1,4 @@
-package com.github.gzilt.tensorflow
+package com.github.gzilt.classifier.image
 
 import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer
@@ -6,7 +6,7 @@ import java.nio.file.Files
 
 import com.github.fommil.netlib.BLAS
 import org.tensorflow.{Graph, Session, Tensor}
-import com.github.gzilt.tensorflow.model.TensorFlowModel
+import com.github.gzilt.classifier.image.model.TensorFlowModel
 
 import scala.collection.JavaConverters._
 

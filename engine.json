@@ -1,7 +1,7 @@
 {
   "id": "default",
   "description": "Image Classification",
-  "engineFactory": "com.github.gzilt.tensorflow.TensorflowEngine",
+  "engineFactory": "com.github.gzilt.classifier.image.TensorflowEngine",
   "datasource": {
     "params" : {
       "appName": "pio-image-classification"

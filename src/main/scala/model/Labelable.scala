@@ -1,4 +1,4 @@
-package com.github.gzilt.tensorflow.model
+package com.github.gzilt.classifier.image.model
 
 case class Label(code: String, label: String, score: Float)
 

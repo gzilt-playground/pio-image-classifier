@@ -1,4 +1,4 @@
-package com.github.gzilt.tensorflow.model
+package com.github.gzilt.classifier.image.model
 
 import java.nio.charset.Charset
 import java.nio.file.{Files, Paths}
