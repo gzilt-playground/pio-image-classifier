@@ -13,10 +13,10 @@
       "params": {
         "inputLayer": "DecodeJpeg/contents:0",
         "outputLayer": "softmax:0",
-        "modelFilename": "classify_image_graph_def.pb",
-        "idToStringIdMap": "data/imagenet_2012_challenge_label_map_proto.pbtxt",
-        "stringIdToLabelMap": "data/imagenet_synset_to_human_label_map.txt",
-        "imageDir": "data/images"
+        "modelFilename": "data/Inception-V3/classify_image_graph_def.pb",
+        "idToStringIdMap": "data/Inception-V3/imagenet_2012_challenge_label_map_proto.pbtxt",
+        "stringIdToLabelMap": "data/Inception-V3/imagenet_synset_to_human_label_map.txt",
+        "imageDir": "data/Inception-V3/images"
       }
     }
   ]
