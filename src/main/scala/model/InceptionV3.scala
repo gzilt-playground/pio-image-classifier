@@ -1,24 +1,20 @@
 package com.github.gzilt.classifier.image.model
 
-import java.nio.charset.Charset
 import java.nio.file.{Files, Paths}
-
-import scala.collection.JavaConverters._
+import scala.io.Source
 
 class InceptionV3(graphPath: String, humanLabelPath: String, labelMapPath: String) extends TensorFlowModel with Labelable {
 
-  def this(modelPath: String) = this(
-    s"$modelPath/classify_image_graph_def.pb",
-    s"$modelPath/imagenet_synset_to_human_label_map.txt",
-    s"$modelPath/imagenet_2012_challenge_label_map_proto.pbtxt")
-
   private val codeLabelSeq: Array[(String, String)] = {
-    val labelMap = Files.readAllLines(Paths.get(humanLabelPath), Charset.defaultCharset()).asScala
+
+    // ex: n02510455 => ["giant panda", "panda", "panda bear", ...]
+    val labelMap = Source.fromFile(humanLabelPath).getLines.toList
       .map(_.split("\\s+", 2))
       .map { case Array(s, l) => (s.trim, l.trim) }
       .toMap
 
-    val indexToCode = Files.readAllLines(Paths.get(labelMapPath), Charset.defaultCharset()).asScala
+    // ex: 169 => ["giant panda", "panda", "panda bear", ...]
+    val indexToCode = Source.fromFile(labelMapPath).getLines.toList
       .dropWhile(_.trim.startsWith("#"))
       .grouped(4)
       .map { grouped =>

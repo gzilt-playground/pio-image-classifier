@@ -16,29 +16,6 @@ import java.nio.file.{Paths, Files}
 import scala.collection.JavaConversions._
 import scala.io.Source
 
-object DataSourceUtils {
-  def categoryMap(
-    idToStringIdMap: String,
-    stringIdToLabelMap: String): Map[Int, String] = {
-
-    // ex: n02510455 => ["giant panda", "panda", "panda bear", ...]
-    val lm = Source.fromFile(stringIdToLabelMap).getLines.toList
-      .map(_.split("\\s+", 2))
-      .map { case Array(s, l) => (s.trim, l.trim) }
-      .toMap
-    // ex: 169 => ["giant panda", "panda", "panda bear", ...]
-    Source.fromFile(idToStringIdMap).getLines.toList
-      .dropWhile(_.trim.startsWith("#"))
-      .grouped(4)
-      .map { grouped =>
-        val cl = grouped(1).split(":")(1).trim.toInt
-        val cls = grouped(2).split(":")(1).trim.stripPrefix("\"").stripSuffix("\"")
-        (cl, lm(cls))
-      }
-      .toMap
-  }
-}
-
 case class DataSourceParams(
   appName: String,
   evalK: Option[Int]

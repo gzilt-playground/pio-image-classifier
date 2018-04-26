@@ -59,7 +59,7 @@ class TFAlgorithm(
     new TFModel(
       ap.inputLayer,
       ap.outputLayer,
-      new File("data", ap.modelFilename))
+      new File(ap.modelFilename))
   }
 
   def predict(model: TFModel, query: Query): PredictedResults = {
